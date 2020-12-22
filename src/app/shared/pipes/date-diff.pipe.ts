@@ -9,7 +9,7 @@ export class DateDiffPipe implements PipeTransform {
     let creationDate = new Date(value);
     
     let currentDate = new Date();
-    let timeDifference = creationDate.getTime() - currentDate.getTime();
+    let timeDifference = currentDate.getTime() - creationDate.getTime();
     
       
     let diffInDays = timeDifference/1000/60/60/24;

@@ -10,10 +10,13 @@ export class GitReposService {
   constructor(public _HttpClient: HttpClient) { }
 
 
-  getRepos():Observable<any> {
+  getRepos(date: string, page: number): Observable<any> {
     return this._HttpClient.get<Object>(
-      'https://api.github.com/search/repositories?q=created:%3E2017-10-22&sort=stars&order=desc',
-);
+      "https://api.github.com/search/repositories?q=created:>" + date + "&sort=stars&order=desc&page=" + page,
+    )
 
-}}
+      ;
+
+  }
+}
 
