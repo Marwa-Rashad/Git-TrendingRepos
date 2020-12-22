@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GitReposService } from 'src/app/core/services/git-repos.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+public repos = [];
+
+  constructor(private _GitReposService: GitReposService ) { }
 
   ngOnInit(): void {
+    this._GitReposService.getRepos().subscribe((data) => {
+
+      this.repos = data.items;
+      console.log(this.repos);
+      this.repos.forEach(repo => {
+        console.log(repo);
+      });
+
+    })
   }
 
 }

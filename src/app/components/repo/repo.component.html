@@ -1,16 +1,15 @@
 <div class="row g-0 align-items-center">
     <div class="col-md-2">
-        <img src="https://avatars3.githubusercontent.com/u/35324794?v=4" alt="Avatar Image">
+        <img [src]="repo.owner.avatar_url" alt="Avatar Image" class="w-100">
     </div>
     <div class="col-md-10">
         <div class="card-body">
-            <h2 class="card-title">Repo Title</h2>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
+            <h2 class="card-title">{{repo.name}}</h2>
+            <p class="card-text">{{repo.description}}.</p>
             <p class="card-text">
-                <small class="text-muted border px-1 mr-2">Stars: <span>11K</span></small>
-                <small class="text-muted border px-1 mr-2">Issues: <span>11K</span></small>
-                <small class="text-muted">Submitted Time Interval by owner name</small></p>
+                <small class="text-muted border px-1 mr-2">Stars: <span class="font-weight-bold">{{repo.stargazers_count}}</span>K</small>
+                <small class="text-muted border px-1 mr-2">Issues: <span  class="font-weight-bold">{{repo.open_issues_count}}</span>K</small>
+                <small class="text-muted">Submitted {{repo.created_at}} {{repo.created_at | dateDiff}} days ago by {{repo.owner.login}}</small></p>
         </div>
     </div>
 </div>
