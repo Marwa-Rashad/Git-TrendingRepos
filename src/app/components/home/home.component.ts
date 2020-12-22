@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private _GitReposService: GitReposService) { }
 
   public repos: Repo[] = [];
-  public repo: Repo;
+  public repo: Repo | undefined;
 
 
   private dt = new Date();
@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
           name: data.items[i].name,
           description: data.items[i].description,
           stargazers_count: data.items[i].stargazers_count,
-          open_issues_count: data.items[i].open_issues_coun,
+          open_issues_count: data.items[i].open_issues_count,
           created_at: data.items[i].created_at,
           owner_login: data.items[i].owner.login,
           owner_avatar: data.items[i].owner.avatar_url
