@@ -1,10 +1,11 @@
 # TrendingRepos
-This is a a small webapp that lists the most starred Github repos that were created in the last 30 days. 
+This is a a small webapp that lists the most starred Github repos that were created in the last 30 days. It uses the Github API. 
 
 ## Getting Started
 Make sure you have the Angular CLI installed globally and npm packages.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+Bootstrap 4 is used in the views.
 
 Run `npm i` to install dependencies.
 

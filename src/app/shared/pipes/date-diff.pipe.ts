@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+//Pipe to calculate the difference in days between repo submission date and current date.
 @Pipe({
   name: 'dateDiff'
 })

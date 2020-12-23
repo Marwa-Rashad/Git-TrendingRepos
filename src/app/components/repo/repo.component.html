@@ -1,18 +1,27 @@
 <div class="row g-0 align-items-center">
     <div class="col-md-2">
+        <!--Display avatar of the user-->
         <img [src]="repo.owner_avatar" alt="Avatar Image" class="w-100">
     </div>
     <div class="col-md-10">
         <div class="card-body">
+            <!--Display repository name-->
             <h2 class="card-title">{{repo.name}}</h2>
+
+            <!--Display repository description-->
             <p class="card-text">{{repo.description}}.</p>
+
             <p class="card-text">
-                <small class="text-muted border px-1 mr-2">Stars: <span class="font-weight-bold">{{repo.stargazers_count
-                        | toKilo}}</span>K</small>
-                <small class="text-muted border px-1 mr-2">Issues: <span
-                        class="font-weight-bold">{{repo.open_issues_count | toKilo}}</span>K</small>
-                <small class="text-muted">Submitted {{repo.created_at | dateDiff}} days ago by
-                    {{repo.owner_login}}</small>
+                <!--Display number of stars for the repo in thousands (k)-->
+                <small class="text-muted border px-1 mr-2">
+                    Stars: <span class="font-weight-bold">{{repo.stargazers_count | toKilo}}</span>K</small>
+                <!--Display number of issues for the repo in thousands (k)-->
+                <small class="text-muted border px-1 mr-2">
+                    Issues: <span class="font-weight-bold">{{repo.open_issues_count | toKilo}}</span>K</small>
+                <!--Display days since repo submission and owner username-->
+                <small class="text-muted">
+                    Submitted <span class="font-weight-bold">{{repo.created_at | dateDiff}}</span>
+                    days ago by <span class="font-weight-bold">{{repo.owner_login}}</span></small>
             </p>
         </div>
     </div>

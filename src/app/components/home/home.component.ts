@@ -1,6 +1,6 @@
-import { Component, OnInit, Output, ɵɵgetCurrentView } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GitReposService } from 'src/app/core/services/git-repos.service';
-import { Repo } from 'src/app/types/repo'
+import { Repo } from 'src/app/core/models/repo.model'
 
 @Component({
   selector: 'app-home',
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-  //Date 30 days ago
+    //Date 30 days ago
 
     this.dt.setDate(this.dt.getDate() - 30);
     this.dateString = this.dt.getFullYear() + '-' + this.dt.getMonth() + '-' + this.dt.getDate();
@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
 
   }
 
-
+  //Method to fetch repos from service and add them to array 'repos'
   fetchrepos(date: string, pageNum: number) {
     this._GitReposService.getRepos(date, pageNum).subscribe((data) => {
       this.totalNumber = data.total_count;
@@ -65,11 +65,12 @@ export class HomeComponent implements OnInit {
         console.log(err);
       }
   }
-  //Lazy Loading page results
+  //Lazy Loading page results using ngx-infinite-scroll
 
   onScrollDown() {
     this.pageNum++;
     this.fetchrepos(this.dateString, this.pageNum);
+    //Stop fetching if the page number exceeds the total number of pages
     if (this.pageNum > this.totalPages) {
       return;
     }

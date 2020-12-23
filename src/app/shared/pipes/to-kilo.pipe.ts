@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-
+//Pipe to get number in thousands (k).
 @Pipe({
   name: 'toKilo'
 })
