@@ -11,6 +11,7 @@ import { RepoComponent } from './components/repo/repo.component';
 import { from } from 'rxjs';
 import { DateDiffPipe } from './shared/pipes/date-diff.pipe';
 import { ToKiloPipe } from './shared/pipes/to-kilo.pipe';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ToKiloPipe } from './shared/pipes/to-kilo.pipe';
     HomeComponent,
     RepoComponent,
     DateDiffPipe,
-    ToKiloPipe
+    ToKiloPipe,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
